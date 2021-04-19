@@ -184,8 +184,8 @@ def SameClass(dataset_):
 def NoneOrSameattr(dataset_, labels_):
     if labels_ != []:
         for i in range(len(dataset_)-2):
-            for j in range(i, len(dataset_)-1):
-                if dataset_[i][:-1] == dataset_[j][:-1]:
+            for j in range(i+1, len(dataset_)-1):
+                if dataset_[i][:-1] != dataset_[j][:-1]:
                     return False
 
     return True
