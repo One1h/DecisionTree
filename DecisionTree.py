@@ -58,7 +58,7 @@ def createDataSet():
     return dataSet, labels, labels_full
 
 
-# B树
+# 多叉树
 class BTreeNode(object):
     def __init__(self, parent=None, keyword=None, child_nodes=[]):
         '''parent：上一层划分属性的具体属性值，如：”浅白“
