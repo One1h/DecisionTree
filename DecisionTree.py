@@ -182,16 +182,14 @@ def SameClass(dataset_):
 
 # 属性为空 或 样本在属性上取值相同
 def NoneOrSameattr(dataset_, labels_):
-    same_attribute = True
-    for i, data in enumerate(dataset_):
-        if i == 0:
-            continue
-        for j, attr in enumerate(labels_):
-            if data[j] != dataset_[i][j - 1]:
-                same_attribute = False
-                break
+    if labels_ != []:
+        for i in range(len(dataset_)-2):
+            for j in range(i, len(dataset_)-1):
+                if dataset_[i][:-1] == dataset_[j][:-1]:
+                    return False
 
-    return labels_ == [] or same_attribute
+    return True
+
 
 # 返回最多类别
 def MostClass(dataset_):
